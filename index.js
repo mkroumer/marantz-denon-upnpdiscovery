@@ -23,6 +23,8 @@ function MarantzDenonUPnPDiscovery(callback) {
     var that = this;
     var foundDevices = {};                                                      // only report a device once
 
+    console.log('MK upnp >> entered constructor');
+    
     // create socket
     var socket = dgram.createSocket({type: 'udp4', reuseAddr: true});
     socket.unref();
@@ -40,8 +42,6 @@ function MarantzDenonUPnPDiscovery(callback) {
         console.log(`server error:\n${err.stack}`);
         socket.close();
     });
-    
-    console.log('MK upnp >> entered constructor');
 
     socket.on('message', function(message, rinfo) {
         var messageString = message.toString();
