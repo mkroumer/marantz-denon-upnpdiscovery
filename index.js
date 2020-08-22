@@ -40,6 +40,8 @@ function MarantzDenonUPnPDiscovery(callback) {
         console.log(`server error:\n${err.stack}`);
         socket.close();
     });
+    
+    console.log('MK upnp >> entered constructor');
 
     socket.on('message', function(message, rinfo) {
         var messageString = message.toString();
