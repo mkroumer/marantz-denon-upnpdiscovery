@@ -23,7 +23,7 @@ function MarantzDenonUPnPDiscovery(callback) {
     var that = this;
     var foundDevices = {};                                                      // only report a device once
 
-    console.log('MK upnp >> entered constructor');
+    console.log(`MK upnp >> entered constructor`);
     
     // create socket
     var socket = dgram.createSocket({type: 'udp4', reuseAddr: true});
