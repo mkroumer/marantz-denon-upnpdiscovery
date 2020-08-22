@@ -46,8 +46,9 @@ function MarantzDenonUPnPDiscovery(callback) {
     socket.on('message', function(message, rinfo) {
         var messageString = message.toString();
         console.log(messageString);
-        if (messageString.match(/(d|D)enon/)) {
+        if (messageString.match(/(d|D)enon|KnOS)) {
             location = messageString.match(/LOCATION: (.*?)(\d+\.\d+\.\d+\.\d+)(.*)/);
+            console.log(`MK >> location:` + location);
             if (location) {
                 arp.getMAC(location[2], function(err, mac) {                    // lookup ip on the arp table to get the MacAddress
                     if (!err) {
