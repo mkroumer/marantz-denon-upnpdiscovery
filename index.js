@@ -46,7 +46,7 @@ function MarantzDenonUPnPDiscovery(callback) {
     socket.on('message', function(message, rinfo) {
         var messageString = message.toString();
         console.log(messageString);
-        if (messageString.match(/(d|D)enon|KnOS)) {
+        if (messageString.match(/(d|D)enon|KnOS/)) {
             location = messageString.match(/LOCATION: (.*?)(\d+\.\d+\.\d+\.\d+)(.*)/);
             console.log(`MK >> location:` + location);
             if (location) {
